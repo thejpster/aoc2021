@@ -1,4 +1,4 @@
-fn main() { 
+fn main() {
 	let steps = advent2021::load("./day2.input", |x| {
 		let parts: Vec<&str> = x.split(" ").collect();
 		(parts[0].to_owned(), parts[1].parse::<i32>().unwrap())
