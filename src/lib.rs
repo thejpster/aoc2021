@@ -4,10 +4,10 @@
 
 use std::io::BufRead;
 
-pub fn load<P, F, T>(filename: P, parser: F) -> Vec<T>
+pub fn load<P, F, T>(filename: P, mut parser: F) -> Vec<T>
 where
 	P: AsRef<std::path::Path>,
-	F: Fn(&str) -> T,
+	F: FnMut(&str) -> T,
 {
 	let f = std::fs::File::open(filename).expect("valid file");
 	let br = std::io::BufReader::new(f);
